@@ -1,4 +1,10 @@
 
+.trigger {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .dkcontainer {
     display: grid;
     grid-template-columns: 25% 75%;
