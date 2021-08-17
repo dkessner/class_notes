@@ -186,6 +186,10 @@
   @include relative-font-size(2);
 }
 
+.post {
+    width: 100%;
+}
+
 .post-list-heading {
   @include relative-font-size(1.75);
 }
