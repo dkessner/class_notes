@@ -1,0 +1,32 @@
+
+.dkcontainer {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: minmax(500px, 70%) 5% ;
+}
+
+
+.dkitem.site-header {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.dkitem.page-content {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+
+.dkitem.site-footer {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+
+
