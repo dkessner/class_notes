@@ -4,6 +4,8 @@ title: Hello
 permalink: /hello/
 ---
 
+Blah blah blah
+
 ```javascript
 function f() {
     console.log("Hello, world!");
@@ -23,6 +25,10 @@ public class Hello
 }
 ```
 
+<main>
+</main>
+
+
 ```console
 # compile
 javac Hello.java
@@ -30,5 +36,7 @@ javac Hello.java
 # run
 java Hello
 ```
+
+<script src="unit_circle.js"></script>
 
 
