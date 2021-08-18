@@ -25,9 +25,12 @@ public class Hello
 }
 ```
 
-<div id="sketch_container">
-</div>
+<br/>
 
+<div id="sketch-container">
+</div>  
+
+<br/>
 
 ```console
 # compile

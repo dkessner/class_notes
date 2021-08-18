@@ -24,9 +24,13 @@
     border: none;
 }
 
-
 @include media-query($on-palm) {
 .dkitem.site-header {
     height: 100%;
 }}
+
+div#sketch-container {
+    display: flex;
+    justify-content: center;
+}
 

@@ -119,5 +119,5 @@ const s = function(sketch) {
 
 } // s
 
-let myp5 = new p5(s, "sketch_container");
+let myp5 = new p5(s, "sketch-container");
 
