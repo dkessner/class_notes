@@ -92,6 +92,20 @@ const s = function(sketch) {
      theta += dtheta;
  }
 
+ sketch.mousePressed = function() {
+     if (sketch.mouseX < axes_center_2.x)
+     {
+         theta = sketch.acos((sketch.mouseX - axes_center_1.x)/radius);
+         if (sketch.mouseY > axes_center_1.y)
+             theta = 2 * sketch.PI - theta;
+     }
+     else
+     {
+         theta = (sketch.mouseX - axes_center_2.x) / radius;
+     }
+
+ }
+
  sketch.mouseDragged = function() {
      if (sketch.mouseX < axes_center_2.x)
      {
