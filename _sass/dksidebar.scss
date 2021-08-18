@@ -10,12 +10,23 @@
     display: flex;
 }
 
+@include media-query($on-palm) {
+.dkcontainer {
+    display: flex;
+    flex-direction: column;
+}}
+
 .dkitem.site-header {
-    height: 95vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     border: none;
 }
 
+
+@include media-query($on-palm) {
+.dkitem.site-header {
+    height: 100%;
+}}
 
