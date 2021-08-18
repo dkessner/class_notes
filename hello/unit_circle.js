@@ -1,85 +1,94 @@
+
+
+const s = function(sketch) {
+
  let theta = 0;
  let dtheta = 0;
  let axes_center_1;
  let axes_center_2;
  let radius;
 
- function setup() {
-     let canvas = createCanvas(600, 400);
-     canvas.parent("sketch");
-     axes_center_1 = new p5.Vector(width / 4, height / 2);
-     axes_center_2 = new p5.Vector(1.1 * width / 2, height / 2);
-     radius = .9 * width / 4;
+ sketch.setup = function () {
+     let canvas = sketch.createCanvas(600, 400);
+     //canvas.parent("sketch");
+     axes_center_1 = new p5.Vector(sketch.width / 4, sketch.height / 2);
+     axes_center_2 = new p5.Vector(1.1 * sketch.width / 2, sketch.height / 2);
+     radius = .9 * sketch.width / 4;
  }
 
- function drawAxes() {
-     strokeWeight(1);
-     stroke(0, 255, 0);
-     line(axes_center_1.x - radius, axes_center_1.y, axes_center_1.x + radius, axes_center_1.y);
-     line(axes_center_1.x, axes_center_1.y - radius, axes_center_1.x, axes_center_1.y + radius);
-     line(axes_center_2.x - radius * .1, axes_center_2.y, axes_center_2.x + radius * 1.9, axes_center_2.y);
-     line(axes_center_2.x, axes_center_2.y - radius, axes_center_2.x, axes_center_2.y + radius);
+ sketch.drawAxes = function() {
+     sketch.strokeWeight(1);
+     sketch.stroke(0, 255, 0);
+     sketch.line(axes_center_1.x - radius, axes_center_1.y, axes_center_1.x + radius, axes_center_1.y);
+     sketch.line(axes_center_1.x, axes_center_1.y - radius, axes_center_1.x, axes_center_1.y + radius);
+     sketch.line(axes_center_2.x - radius * .1, axes_center_2.y, axes_center_2.x + radius * 1.9, axes_center_2.y);
+     sketch.line(axes_center_2.x, axes_center_2.y - radius, axes_center_2.x, axes_center_2.y + radius);
  }
 
- function drawUnitCircle() {
-     strokeWeight(1);
-     stroke(128);
-     noFill();
-     ellipse(axes_center_1.x, axes_center_1.y, radius * 2, radius * 2);
+ sketch.drawUnitCircle = function() {
+     sketch.strokeWeight(1);
+     sketch.stroke(128);
+     sketch.noFill();
+     sketch.ellipse(axes_center_1.x, axes_center_1.y, radius * 2, radius * 2);
  }
 
- function X(angle) {
-     angle = angle % (2 * PI);
-     if (angle < 0) angle += 2 * PI;
-     let x = axes_center_2.x + angle * radius * 1.9 / 2 / PI;
+ sketch.X = function(angle) {
+     angle = angle % (2 * sketch.PI);
+     if (angle < 0) angle += 2 * sketch.PI;
+     let x = axes_center_2.x + angle * radius * 1.9 / 2 / sketch.PI;
      return x;
  }
 
- function Y(angle) {
-     return axes_center_2.y - radius * sin(angle);
+ sketch.Y = function(angle) {
+     return axes_center_2.y - radius * sketch.sin(angle);
  }
 
- function drawSin() {
-     strokeWeight(1);
-     beginShape();
-     for (let t = 0; t < 2 * PI; t += .01) {
-         vertex(X(t), Y(t));
+ sketch.drawSin = function() {
+     sketch.strokeWeight(1);
+     sketch.beginShape();
+     for (let t = 0; t < 2 * sketch.PI; t += .01) {
+         sketch.vertex(this.X(t), this.Y(t));
      }
-     endShape();
+     sketch.endShape();
  }
 
- function drawClockHand() {
-     strokeWeight(3);
-     stroke(255);
-     let x = axes_center_1.x + radius * cos(theta);
-     let y = axes_center_1.y - radius * sin(theta);
-     line(axes_center_1.x, axes_center_1.y, x, y);
-     line(axes_center_1.x, axes_center_1.y, axes_center_1.x, y);
+ sketch.drawClockHand = function() {
+     sketch.strokeWeight(3);
+     sketch.stroke(255);
+     let x = axes_center_1.x + radius * sketch.cos(theta);
+     let y = axes_center_1.y - radius * sketch.sin(theta);
+     sketch.line(axes_center_1.x, axes_center_1.y, x, y);
+     sketch.line(axes_center_1.x, axes_center_1.y, axes_center_1.x, y);
  }
 
- function drawVerticalBar() {
-     strokeWeight(3);
-     stroke(255);
-     let x = X(theta);
-     let y = Y(theta);
-     line(x, axes_center_2.y, x, y);
+ sketch.drawVerticalBar = function() {
+     sketch.strokeWeight(3);
+     sketch.stroke(255);
+     let x = this.X(theta);
+     let y = sketch.Y(theta);
+     sketch.line(x, axes_center_2.y, x, y);
  }
 
- function draw() {
-     background(0);
-     drawAxes();
-     drawUnitCircle();
-     drawClockHand();
-     drawSin();
-     drawVerticalBar();
+ sketch.draw = function() {
+     sketch.background(0);
+     sketch.drawAxes();
+     sketch.drawUnitCircle();
+     sketch.drawClockHand();
+     sketch.drawSin();
+     sketch.drawVerticalBar();
      theta += dtheta;
  }
 
- function keyPressed() {
-     if (keyCode == UP_ARROW || keyCode == RIGHT_ARROW) dtheta = .04;
-     else if (keyCode == DOWN_ARROW || keyCode == LEFT_ARROW) dtheta = -.04;
+ sketch.keyPressed = function() {
+     if (sketch.keyCode == sketch.UP_ARROW || sketch.keyCode == sketch.RIGHT_ARROW) dtheta = .04;
+     else if (sketch.keyCode == sketch.DOWN_ARROW || sketch.keyCode == sketch.LEFT_ARROW) dtheta = -.04;
  }
 
- function keyReleased() {
+ sketch.keyReleased = function() {
      dtheta = 0;
  }
+
+} // s
+
+let myp5 = new p5(s, "sketch_container");
+

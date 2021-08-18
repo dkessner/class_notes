@@ -25,7 +25,7 @@ public class Hello
 }
 ```
 
-<div id="sketch">
+<div id="sketch_container">
 </div>
 
 
