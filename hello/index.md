@@ -25,8 +25,8 @@ public class Hello
 }
 ```
 
-<main>
-</main>
+<div id="sketch">
+</div>
 
 
 ```console
