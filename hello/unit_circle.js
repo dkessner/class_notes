@@ -5,7 +5,8 @@
  let radius;
 
  function setup() {
-     createCanvas(800, 400);
+     let canvas = createCanvas(600, 400);
+     canvas.parent("sketch");
      axes_center_1 = new p5.Vector(width / 4, height / 2);
      axes_center_2 = new p5.Vector(1.1 * width / 2, height / 2);
      radius = .9 * width / 4;
