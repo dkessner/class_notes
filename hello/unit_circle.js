@@ -8,12 +8,15 @@ const s2 = function(sketch) {
  let axes_center_2;
  let radius;
 
- sketch.setup = function () {
-     let canvas = sketch.createCanvas(600, 300);
-     //canvas.parent("sketch");
+ sketch.initialize = function() {
      axes_center_1 = new p5.Vector(sketch.width * .12, sketch.height / 2);
      axes_center_2 = new p5.Vector(sketch.width * .3, sketch.height / 2);
      radius = .9 * axes_center_1.x;
+ }
+ 
+ sketch.setup = function () {
+     let canvas = sketch.createCanvas(600, 300);
+     sketch.initialize();
  }
 
  sketch.drawAxes = function() {
@@ -94,6 +97,19 @@ const s2 = function(sketch) {
 
  sketch.mousePressed = function() {
      if (sketch.mouseX < 0 || sketch.mouseX>sketch.width || sketch.mouseY<0 || sketch.mouseY>sketch.height) return;
+
+     if (sketch.mouseX < sketch.width * .25) 
+         sketch.keyCode = sketch.LEFT_ARROW;
+     else if (sketch.mouseX > sketch.width * .75) 
+         sketch.keyCode = sketch.RIGHT_ARROW;
+     else if (sketch.mouseY < sketch.height * .25) 
+         sketch.keyCode = sketch.UP_ARROW;
+     else if (sketch.mouseY > sketch.height * .75) 
+         sketch.keyCode = sketch.DOWN_ARROW;
+
+     sketch.keyPressed();
+
+    /* 
      if (sketch.mouseX < axes_center_2.x)
      {
          theta = sketch.acos((sketch.mouseX - axes_center_1.x)/radius);
@@ -104,9 +120,12 @@ const s2 = function(sketch) {
      {
          theta = (sketch.mouseX - axes_center_2.x) / radius;
      }
+     */
 
  }
 
+
+    /*
  sketch.mouseDragged = function() {
      if (sketch.mouseX < 0 || sketch.mouseX>sketch.width || sketch.mouseY<0 || sketch.mouseY>sketch.height) return;
      if (sketch.mouseX < axes_center_2.x)
@@ -123,6 +142,7 @@ const s2 = function(sketch) {
         theta = (sketch.mouseX - axes_center_2.x) / radius;
      }
  }
+ */
 
  sketch.keyPressed = function() {
      if (sketch.keyCode == sketch.UP_ARROW || sketch.keyCode == sketch.RIGHT_ARROW) dtheta = .04;
@@ -132,6 +152,20 @@ const s2 = function(sketch) {
  sketch.keyReleased = function() {
      dtheta = 0;
  }
+
+ sketch.mouseReleased = sketch.keyReleased;
+
+ sketch.windowResized = function() {
+    let contents = document.getElementsByClassName("post-content");
+    if (contents.length === 1)
+    {
+        let w = contents[0].offsetWidth;
+        sketch.resizeCanvas(w * .8, sketch.height);
+        sketch.initialize();
+    }
+ }
+
+
 
 } // s
 
