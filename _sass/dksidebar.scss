@@ -1,5 +1,10 @@
 
 
+hr {
+    color: black;
+    width: 100%;
+}
+
 .trigger {
     display: flex;
     flex-direction: column;
@@ -22,6 +27,7 @@
     flex-direction: column;
     justify-content: space-between;
     border: none;
+    background-color: rgba(255, 255, 255, .5);
 }
 
 @include media-query($on-palm) {
