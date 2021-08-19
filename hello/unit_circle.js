@@ -19,6 +19,11 @@ const unitCircleSketchMaker = function(sketch) {
  sketch.setup = function () {
      let canvas = sketch.createCanvas(600, 300);
      sketch.initialize();
+
+     // from handlers.js
+     addMouseKeyDelegate(sketch);
+     addWindowResizeHandler(sketch);
+     sketch.windowResized();
  }
 
  sketch.drawAxes = function() {

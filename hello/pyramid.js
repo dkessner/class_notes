@@ -23,6 +23,11 @@ const pyramidSketchMaker = function(sketch) {
      sketch.createCanvas(600, 400, sketch.WEBGL);
      sketch.textFont(pf);
      sketch.initialize();
+
+     // from handlers.js
+     addMouseKeyDelegate(sketch);
+     addWindowResizeHandler(sketch);
+     sketch.windowResized();
  }
 
  sketch.initialize = function() {
@@ -98,6 +103,8 @@ const pyramidSketchMaker = function(sketch) {
      sketch.vertex(s / 2, 0, -h);
      sketch.endShape();
  }
+
+ let first = true;
 
  sketch.draw = function() {
      sketch.translate(-sketch.width / 2, -sketch.height / 2);

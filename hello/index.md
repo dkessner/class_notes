@@ -54,12 +54,7 @@ java Hello
 <script src="pyramid.js"></script>
 
 <script>
-    let unitCircleSketch = new p5(unitCircleSketchMaker, "unitCircleContainer");
-    addMouseKeyDelegate(unitCircleSketch);
-    addWindowResizeHandler(unitCircleSketch);
-
-    let pyramidSketch = new p5(pyramidSketchMaker, "pyramidContainer");
-    addMouseKeyDelegate(pyramidSketch);
-    addWindowResizeHandler(pyramidSketch);
+    new p5(unitCircleSketchMaker, "unitCircleContainer");
+    new p5(pyramidSketchMaker, "pyramidContainer");
 </script>
 
