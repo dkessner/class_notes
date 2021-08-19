@@ -1,6 +1,6 @@
 
 
-const s = function(sketch) {
+const s2 = function(sketch) {
 
  let theta = 0;
  let dtheta = 0;
@@ -9,7 +9,7 @@ const s = function(sketch) {
  let radius;
 
  sketch.setup = function () {
-     let canvas = sketch.createCanvas(600, 200);
+     let canvas = sketch.createCanvas(600, 300);
      //canvas.parent("sketch");
      axes_center_1 = new p5.Vector(sketch.width * .12, sketch.height / 2);
      axes_center_2 = new p5.Vector(sketch.width * .3, sketch.height / 2);
@@ -93,6 +93,7 @@ const s = function(sketch) {
  }
 
  sketch.mousePressed = function() {
+     if (sketch.mouseX < 0 || sketch.mouseX>sketch.width || sketch.mouseY<0 || sketch.mouseY>sketch.height) return;
      if (sketch.mouseX < axes_center_2.x)
      {
          theta = sketch.acos((sketch.mouseX - axes_center_1.x)/radius);
@@ -107,6 +108,7 @@ const s = function(sketch) {
  }
 
  sketch.mouseDragged = function() {
+     if (sketch.mouseX < 0 || sketch.mouseX>sketch.width || sketch.mouseY<0 || sketch.mouseY>sketch.height) return;
      if (sketch.mouseX < axes_center_2.x)
      {
         let p1 = sketch.createVector(sketch.mouseX, sketch.mouseY);
@@ -133,5 +135,5 @@ const s = function(sketch) {
 
 } // s
 
-let myp5 = new p5(s, "sketch-container");
+let myp5 = new p5(s2, "sketch-container");
 
