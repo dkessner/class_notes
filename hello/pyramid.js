@@ -172,7 +172,23 @@ const s = function(sketch) {
      vt = vseparation = 0;
  }
 
+ sketch.windowResized = function() {
+    let contents = document.getElementsByClassName("post-content");
+    if (contents.length === 1)
+    {
+        let w = contents[0].offsetWidth;
+        sketch.resizeCanvas(w * .8, sketch.height);
+
+        pyramid_s = 100 * sketch.width / 600.0;
+        pyramid_h = 50 * sketch.width / 600.0; 
+        separation = 0;
+        vseparation = 0;
+    }
+ }
+
 } // s
 
 let myp5_2 = new p5(s, "sketch-container-2");
+
+
 
