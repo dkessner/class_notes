@@ -42,6 +42,11 @@ javac Hello.java
 java Hello
 ```
 
+<br/>
+![](test_notes.png)
+<br/>
+
+
 <script src="handlers.js"></script>
 <script src="unit_circle.js"></script>
 <script src="pyramid.js"></script>
