@@ -151,14 +151,14 @@ const s = function(sketch) {
          px = sketch.pmouseX, 
          py = sketch.pmouseY;
 
-     if (x < sketch.width * .25) 
+     if (x < sketch.width * .45) 
          vseparation = -5;
-     else if (x > sketch.width * .75) 
+     else if (x > sketch.width * .55) 
          vseparation = 5;
 
-     if (y < sketch.height * .25) 
+     if (y < sketch.height * .45) 
          vt = sketch.PI/75;
-     else if (y > sketch.height * .75) 
+     else if (y > sketch.height * .55) 
          vt = -sketch.PI/75;
  }
 
