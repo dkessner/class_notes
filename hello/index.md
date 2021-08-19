@@ -34,6 +34,8 @@ public class Hello
 
 <br/>
 
+![](test_notes.png)
+
 ```console
 # compile
 javac Hello.java
@@ -43,7 +45,7 @@ java Hello
 ```
 
 <br/>
-![](test_notes.png)
+![](test_notes_2.png)
 <br/>
 
 
