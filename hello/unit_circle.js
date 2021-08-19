@@ -1,6 +1,8 @@
+//
+// unit_circle.js
+//
 
-
-const s2 = function(sketch) {
+const unitCircleSketch = function(sketch) {
 
  let theta = 0;
  let dtheta = 0;
@@ -165,9 +167,6 @@ const s2 = function(sketch) {
     }
  }
 
+} // unitCircleSketch
 
-
-} // s
-
-let myp5 = new p5(s2, "sketch-container");
 

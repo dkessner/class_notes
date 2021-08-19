@@ -1,4 +1,8 @@
-const s = function(sketch) {
+//
+// pyramid.js
+//
+
+const pyramidSketch = function(sketch) {
 
  let pyramid_s = 100;
  let pyramid_h = 50;
@@ -186,9 +190,8 @@ const s = function(sketch) {
     }
  }
 
-} // s
+} // pyramidSketch 
 
-let myp5_2 = new p5(s, "sketch-container-2");
 
 
 
