@@ -6,9 +6,15 @@ const s = function(sketch) {
  let vseparation = 0;
  let t = -sketch.PI / 4;
  let vt = 0;
+ let pf;
+
+ sketch.preload = function() {
+    pf = sketch.loadFont("sudegnakno4.ttf");
+ }
 
  sketch.setup = function() {
      sketch.createCanvas(600, 400, sketch.WEBGL);
+     sketch.textFont(pf);
  }
 
  sketch.pyramid = function(s, h) {
@@ -78,7 +84,7 @@ const s = function(sketch) {
      sketch.background(0);
      sketch.fill(255);
      sketch.textAlign(sketch.CENTER, sketch.CENTER);
-     sketch.textSize(20);
+     sketch.textSize(50);
      sketch.text("RIGHT/LEFT: separate", 150, 40);
      sketch.text("UP/DOWN: rotate", 450, 40);
      sketch.translate(sketch.width / 2, sketch.height / 2, 100);
