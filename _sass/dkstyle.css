@@ -45,7 +45,7 @@ div.sketch-container {
 
 @font-face {
     font-family: 'ComicMono';
-    src: url('fonts/ComicMono.ttf') format('truetype');
+    src: url({{ 'fonts/ComicMono.ttf' | relative_url }}) format('truetype');
 }
 
 code {
