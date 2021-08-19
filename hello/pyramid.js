@@ -143,13 +143,23 @@ const s = function(sketch) {
  }
 
 
- sketch.mouseDragged = function() {
-     let x = sketch.mouseX, y = sketch.mouseY, px = sketch.pmouseX, py = sketch.pmouseY;
-     
-     if (x < 0 || x>sketch.width || y<0 || y>sketch.height) return;
+ sketch.mousePressed = function() {
+     if (sketch.mouseX < 0 || sketch.mouseX>sketch.width || sketch.mouseY<0 || sketch.mouseY>sketch.height) return;
 
-     vseparation = (x - px)/5;
-     vt = (py - y)/100;
+     let x = sketch.mouseX, 
+         y = sketch.mouseY, 
+         px = sketch.pmouseX, 
+         py = sketch.pmouseY;
+
+     if (x < sketch.width * .25) 
+         vseparation = -5;
+     else if (x > sketch.width * .75) 
+         vseparation = 5;
+
+     if (y < sketch.height * .25) 
+         vt = sketch.PI/75;
+     else if (y > sketch.height * .75) 
+         vt = -sketch.PI/75;
  }
 
  sketch.mouseReleased = function() {
