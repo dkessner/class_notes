@@ -2,7 +2,7 @@
 // unit_circle.js
 //
 
-const unitCircleSketch = function(sketch) {
+const unitCircleSketchMaker = function(sketch) {
 
  let theta = 0;
  let dtheta = 0;
@@ -97,56 +97,9 @@ const unitCircleSketch = function(sketch) {
      theta += dtheta;
  }
 
- sketch.mousePressed = function() {
-     if (sketch.mouseX < 0 || sketch.mouseX>sketch.width || sketch.mouseY<0 || sketch.mouseY>sketch.height) return;
-
-     if (sketch.mouseX < sketch.width * .25) 
-         sketch.keyCode = sketch.LEFT_ARROW;
-     else if (sketch.mouseX > sketch.width * .75) 
-         sketch.keyCode = sketch.RIGHT_ARROW;
-     else if (sketch.mouseY < sketch.height * .25) 
-         sketch.keyCode = sketch.UP_ARROW;
-     else if (sketch.mouseY > sketch.height * .75) 
-         sketch.keyCode = sketch.DOWN_ARROW;
-
-     sketch.keyPressed();
-
-    /* 
-     if (sketch.mouseX < axes_center_2.x)
-     {
-         theta = sketch.acos((sketch.mouseX - axes_center_1.x)/radius);
-         if (sketch.mouseY > axes_center_1.y)
-             theta = 2 * sketch.PI - theta;
-     }
-     else
-     {
-         theta = (sketch.mouseX - axes_center_2.x) / radius;
-     }
-     */
-
- }
-
-
-    /*
- sketch.mouseDragged = function() {
-     if (sketch.mouseX < 0 || sketch.mouseX>sketch.width || sketch.mouseY<0 || sketch.mouseY>sketch.height) return;
-     if (sketch.mouseX < axes_center_2.x)
-     {
-        let p1 = sketch.createVector(sketch.mouseX, sketch.mouseY);
-        p1.sub(axes_center_1);
-        let p2 = sketch.createVector(sketch.pmouseX, sketch.pmouseY);
-        p2.sub(axes_center_1);
-        let dtheta = p1.angleBetween(p2);
-        theta += dtheta;
-     }
-     else
-     {
-        theta = (sketch.mouseX - axes_center_2.x) / radius;
-     }
- }
- */
-
  sketch.keyPressed = function() {
+     if (sketch.mouseX < 0 || sketch.mouseX>sketch.width || sketch.mouseY<0 || sketch.mouseY>sketch.height) return;
+
      if (sketch.keyCode == sketch.UP_ARROW || sketch.keyCode == sketch.RIGHT_ARROW) dtheta = .04;
      else if (sketch.keyCode == sketch.DOWN_ARROW || sketch.keyCode == sketch.LEFT_ARROW) dtheta = -.04;
  }
@@ -155,17 +108,6 @@ const unitCircleSketch = function(sketch) {
      dtheta = 0;
  }
 
- sketch.mouseReleased = sketch.keyReleased;
-
- sketch.windowResized = function() {
-    let contents = document.getElementsByClassName("post-content");
-    if (contents.length === 1)
-    {
-        let w = contents[0].offsetWidth;
-        sketch.resizeCanvas(w * .8, sketch.height);
-        sketch.initialize();
-    }
- }
 
 } // unitCircleSketch
 

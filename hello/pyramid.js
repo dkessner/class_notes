@@ -2,7 +2,7 @@
 // pyramid.js
 //
 
-const pyramidSketch = function(sketch) {
+const pyramidSketchMaker = function(sketch) {
 
  let pyramid_s = 100;
  let pyramid_h = 50;
@@ -11,6 +11,9 @@ const pyramidSketch = function(sketch) {
  let t = -sketch.PI / 4;
  let vt = 0;
  let pf;
+ let textPosition1;
+ let textPosition2;
+ let textSize12;
 
  sketch.preload = function() {
     pf = sketch.loadFont("sudegnakno4.ttf");
@@ -19,6 +22,19 @@ const pyramidSketch = function(sketch) {
  sketch.setup = function() {
      sketch.createCanvas(600, 400, sketch.WEBGL);
      sketch.textFont(pf);
+     sketch.initialize();
+ }
+
+ sketch.initialize = function() {
+     pyramid_s = 100 * sketch.width / 600.0;
+     pyramid_h = 50 * sketch.width / 600.0; 
+     separation = 0;
+     vseparation = 0;
+     textPosition1 = sketch.createVector(150, 40);
+     textPosition1.mult(sketch.width/600.0);
+     textPosition2 = sketch.createVector(450, 40);
+     textPosition2.mult(sketch.width/600.0);
+     textSize12 = 50 * sketch.width/600.0;
  }
 
  sketch.pyramid = function(s, h) {
@@ -88,9 +104,9 @@ const pyramidSketch = function(sketch) {
      sketch.background(0);
      sketch.fill(255);
      sketch.textAlign(sketch.CENTER, sketch.CENTER);
-     sketch.textSize(50);
-     sketch.text("RIGHT/LEFT: separate", 150, 40);
-     sketch.text("UP/DOWN: rotate", 450, 40);
+     sketch.textSize(textSize12);
+     sketch.text("RIGHT/LEFT: separate", textPosition1.x, textPosition1.y);
+     sketch.text("UP/DOWN: rotate", textPosition2.x, textPosition2.y);
      sketch.translate(sketch.width / 2, sketch.height / 2, 100);
      sketch.rotateX(t);
      sketch.rotateY(sketch.PI / 4);
@@ -130,10 +146,18 @@ const pyramidSketch = function(sketch) {
          separation = 0;
          vseparation = 0;
      }
+     else if (separation > 2*pyramid_s) {
+         separation = 2*pyramid_s;
+         vseparation = 0;
+     }
      t += vt;
  }
 
  sketch.keyPressed = function() {
+     if (sketch.mouseX < 0 || sketch.mouseX>sketch.width || 
+         sketch.mouseY<0 || sketch.mouseY>sketch.height) 
+         return;
+
      if (sketch.keyCode == sketch.RIGHT_ARROW) {
          vseparation = 10;
      } else if (sketch.keyCode == sketch.LEFT_ARROW) {
@@ -146,48 +170,11 @@ const pyramidSketch = function(sketch) {
  }
 
  sketch.keyReleased = function() {
-     if (sketch.keyCode == sketch.UP_ARROW || sketch.keyCode == sketch.DOWN_ARROW) vt = 0;
+     if (sketch.keyCode == sketch.UP_ARROW || sketch.keyCode == sketch.DOWN_ARROW) 
+         vt = 0;
      else if (sketch.keyCode == sketch.RIGHT_ARROW || sketch.keyCode == sketch.LEFT_ARROW) {
          vseparation = 0;
      }
- }
-
-
- sketch.mousePressed = function() {
-     if (sketch.mouseX < 0 || sketch.mouseX>sketch.width || sketch.mouseY<0 || sketch.mouseY>sketch.height) return;
-
-     let x = sketch.mouseX, 
-         y = sketch.mouseY, 
-         px = sketch.pmouseX, 
-         py = sketch.pmouseY;
-
-     if (x < sketch.width * .45) 
-         vseparation = -5;
-     else if (x > sketch.width * .55) 
-         vseparation = 5;
-
-     if (y < sketch.height * .45) 
-         vt = sketch.PI/75;
-     else if (y > sketch.height * .55) 
-         vt = -sketch.PI/75;
- }
-
- sketch.mouseReleased = function() {
-     vt = vseparation = 0;
- }
-
- sketch.windowResized = function() {
-    let contents = document.getElementsByClassName("post-content");
-    if (contents.length === 1)
-    {
-        let w = contents[0].offsetWidth;
-        sketch.resizeCanvas(w * .8, sketch.height);
-
-        pyramid_s = 100 * sketch.width / 600.0;
-        pyramid_h = 50 * sketch.width / 600.0; 
-        separation = 0;
-        vseparation = 0;
-    }
  }
 
 } // pyramidSketch 

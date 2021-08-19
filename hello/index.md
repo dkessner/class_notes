@@ -15,7 +15,7 @@ function f() {
 $$ e^x = \sum_{n=0}^\infty \frac{x^n}{n!} $$
 
 <br/>
-<div class="sketch-container" id="sketch-container-2"></div>  
+<div class="sketch-container" id="pyramidContainer"></div>  
 <br/>
 
 ```java
@@ -30,7 +30,7 @@ public class Hello
 
 <br/>
 
-<div class="sketch-container" id="sketch-container"></div>  
+<div class="sketch-container" id="unitCircleContainer"></div>  
 
 <br/>
 
@@ -42,11 +42,17 @@ javac Hello.java
 java Hello
 ```
 
+<script src="handlers.js"></script>
 <script src="unit_circle.js"></script>
 <script src="pyramid.js"></script>
 
 <script>
-    new p5(unitCircleSketch, "sketch-container");
-    new p5(pyramidSketch, "sketch-container-2");
+    let unitCircleSketch = new p5(unitCircleSketchMaker, "unitCircleContainer");
+    addMouseKeyDelegate(unitCircleSketch);
+    addWindowResizeHandler(unitCircleSketch);
+
+    let pyramidSketch = new p5(pyramidSketchMaker, "pyramidContainer");
+    addMouseKeyDelegate(pyramidSketch);
+    addWindowResizeHandler(pyramidSketch);
 </script>
 
