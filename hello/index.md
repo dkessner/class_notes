@@ -49,7 +49,6 @@ java Hello
 <br/>
 
 
-<script src="handlers.js"></script>
 <script src="unit_circle.js"></script>
 <script src="pyramid.js"></script>
 
