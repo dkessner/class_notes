@@ -54,7 +54,7 @@ java Hello
 <script src="pyramid.js"></script>
 
 <script>
-    new p5(unitCircleSketchMaker, "unitCircleContainer");
-    new p5(pyramidSketchMaker, "pyramidContainer");
+    let unitCircle = new p5(addHandlers(unitCircleSketchMaker), "unitCircleContainer");
+    let pyramid = new p5(addHandlers(pyramidSketchMaker), "pyramidContainer");
 </script>
 

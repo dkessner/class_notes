@@ -23,11 +23,6 @@ const pyramidSketchMaker = function(sketch) {
      sketch.createCanvas(600, 400, sketch.WEBGL);
      sketch.textFont(pf);
      sketch.initialize();
-
-     // from handlers.js
-     addMouseKeyDelegate(sketch);
-     addWindowResizeHandler(sketch);
-     sketch.windowResized();
  }
 
  sketch.initialize = function() {

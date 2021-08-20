@@ -3,6 +3,26 @@
 //
 
 
+function addHandlers(sketchMaker)
+{
+    return function(sketch) {
+        sketchMaker(sketch);
+        addMouseKeyDelegate(sketch);
+        addWindowResizeHandler(sketch);
+
+        // hack: force call windowResized() from setup()
+        // (alternative: try generating resize event)
+
+        sketch.originalSetup = sketch.setup;
+
+        sketch.setup = function() {
+            sketch.originalSetup();
+            sketch.windowResized();
+        }
+    }
+}
+
+
 const addMouseKeyDelegate = function(sketch) {
 
     sketch.mousePressed = function() {
