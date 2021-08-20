@@ -13,10 +13,10 @@ function addHandlers(sketchMaker)
         // hack: force call windowResized() from setup()
         // (alternative: try generating resize event)
 
-        sketch.originalSetup = sketch.setup;
+        let originalSetup = sketch.setup;
 
         sketch.setup = function() {
-            sketch.originalSetup();
+            originalSetup();
             sketch.windowResized();
         }
     }
