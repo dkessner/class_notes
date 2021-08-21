@@ -55,7 +55,7 @@ const addWindowResizeHandler = function(sketch) {
         if (contents.length === 1)
         {
             let w = contents[0].offsetWidth;
-            sketch.resizeCanvas(w * .8, sketch.height);
+            sketch.resizeCanvas(w, sketch.height);
             if ("initialize" in sketch && typeof sketch.initialize === "function")
                 sketch.initialize();
         }

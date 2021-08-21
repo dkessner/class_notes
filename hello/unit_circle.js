@@ -108,7 +108,6 @@ const unitCircleSketchMaker = function(sketch) {
      dtheta = 0;
  }
 
-
-} // unitCircleSketch
+} // unitCircleSketchMaker
 
 

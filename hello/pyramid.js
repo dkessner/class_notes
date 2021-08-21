@@ -179,8 +179,5 @@ const pyramidSketchMaker = function(sketch) {
      }
  }
 
-} // pyramidSketch 
-
-
-
+} // pyramidSketchMaker
 
