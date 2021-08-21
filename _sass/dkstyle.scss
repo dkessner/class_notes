@@ -26,6 +26,7 @@ hr {
 
 .dkitem.site-header {
     height: 100vh;
+    min-width: 200px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -36,6 +37,7 @@ hr {
 @include media-query($on-palm) {
 .dkitem.site-header {
     height: 100%;
+    width: 100%;
 }}
 
 div.sketch-container {
