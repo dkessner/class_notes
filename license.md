@@ -4,14 +4,15 @@ permalink: /license/
 layout: info
 ---
 
-The material in this project is licensed as follows:
-
-- The **code** is under the [MIT license](https://opensource.org/licenses/MIT).
-
-- The **text** is under the Creative Commons Attribution-ShareAlike 4.0 International License
-([CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0)).
-
 Copyright 2021 Darren Kessner
+
+This project is licensed as follows:
+
+Code: [MIT license](https://opensource.org/licenses/MIT)
+
+Text: Creative Commons Attribution-ShareAlike 4.0 International License
+([CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0))
+
 
 ## MIT License
 
@@ -34,7 +35,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
-## Creative Commons Attribution-ShareAlike (summary)
+## Creative Commons Attribution-ShareAlike 
+_(CC BY-SA, human-readable summary)_
 
 You are free to:
 
