@@ -8,7 +8,7 @@ This is a Jekyll project template, to be forked for specific courses or
 projects.
 
 Features:
-- LaTeX mathematical equations rendered by MathJax
+- LaTeX mathematical equations rendered by KaTeX
 - p5 sketch embedding helper functions:
     - mouse -> arrow key event delegation
     - windowResized() event handling
@@ -17,7 +17,7 @@ This project relies solely on open source software and tools, including:
 
 - [Jekyll](https://jekyllrb.com/): static site generator, for this website
 - [p5.js](https://p5js.org/): JavaScript graphics library for creative coding
-- [MathJax](https://www.mathjax.org/): JavaScript library for rendering LaTeX math
+- [KaTeX](https://www.katex.org/): JavaScript library for rendering LaTeX math
 - [Comic Mono](https://dtinth.github.io/comic-mono-font/): font for the code examples
 
 
