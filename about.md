@@ -4,6 +4,8 @@ permalink: /about/
 layout: info
 ---
 
+## Project 
+
 This is a Jekyll project template, to be forked for specific courses or
 projects.
 
@@ -13,16 +15,24 @@ Features:
     - mouse -> arrow key event delegation
     - windowResized() event handling
 
+Project page:   
+[https://github.com/dkessner/class_notes](https://github.com/dkessner/class_notes)
+
+## License
+
+Code: [MIT license](https://opensource.org/licenses/MIT)
+
+Text: Creative Commons Attribution-ShareAlike 4.0 International License
+([CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0))
+
+## Dependencies
+
 This project relies solely on open source software and tools, including:
 
 - [Jekyll](https://jekyllrb.com/): static site generator, for this website
 - [p5.js](https://p5js.org/): JavaScript graphics library for creative coding
 - [KaTeX](https://www.katex.org/): JavaScript library for rendering LaTeX math
 - [Comic Mono](https://dtinth.github.io/comic-mono-font/): font for the code examples
-
-
-Project page:   
-[https://github.com/dkessner/class_notes](https://github.com/dkessner/class_notes)
 
 
 ## Inspiration
