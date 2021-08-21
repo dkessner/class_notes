@@ -1,7 +1,7 @@
 ---
-layout: page
 title: About
 permalink: /about/
+layout: info
 ---
 
 This is a Jekyll project template, to be forked for specific courses or

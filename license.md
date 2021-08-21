@@ -1,8 +1,8 @@
 ---
-layout: default
+title: License
+permalink: /license/
+layout: info
 ---
-
-# License
 
 The material in this project is licensed as follows:
 
