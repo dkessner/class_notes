@@ -6,12 +6,12 @@ layout: info
 
 ## Project 
 
-This is a Jekyll project template, to be forked for specific courses or
-projects.
+This is a Jekyll project template for class/workshop notes, examples, and
+interactive demos.
 
 Features:
-- LaTeX mathematical equations rendered by KaTeX
-- p5 sketch embedding helper functions:
+- LaTeX mathematical equations inside Markdown
+- p5 sketch embedding, with helper functions:
     - mouse -> arrow key event delegation
     - windowResized() event handling
 
