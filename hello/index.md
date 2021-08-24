@@ -12,13 +12,14 @@ function f() {
 }
 ```
 
-<div class="notes">
 Blah blah blah.  Blah blah blah.  Blah blah blah.
 Let $f(x) = \cos(x)$. Blah blah blah.
+
 $$ e^x = \sum_{n=0}^\infty \frac{x^n}{n!} $$
+
 Blah blah blah.  Blah blah blah.  Blah blah blah.
+
 $$ \cos^2 x + \sin^2 x = 1 $$
-</div>
 
 <br/>
 <div class="sketch-container" id="pyramidContainer"></div>  

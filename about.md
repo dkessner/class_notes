@@ -7,7 +7,8 @@ layout: info
 ## Project 
 
 This is a Jekyll project template for class/workshop notes, examples, and
-interactive demos.
+interactive demos.  To create your own project based on this template, go to
+the GitHub project page and click the green "Use this template" button.
 
 Features:
 - LaTeX mathematical equations inside Markdown
@@ -15,7 +16,7 @@ Features:
     - mouse -> arrow key event delegation
     - windowResized() event handling
 
-Project page:   
+GitHub project page:   
 [https://github.com/dkessner/class_notes](https://github.com/dkessner/class_notes)
 
 ## License
