@@ -187,8 +187,13 @@
 }
 
 .post {
-    width: 95%;
+    width: calc(100vw - 440px);
+
+    @include media-query($on-palm) {
+      width: 85vw;
+    }
 }
+
 
 .post-list-heading {
   @include relative-font-size(1.75);
